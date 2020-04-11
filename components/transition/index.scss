@@ -1,0 +1,71 @@
+@import '../common/index.scss';
+// @import '../overlay/index.scss';
+.you-transition {
+	transition-timing-function: ease;
+}
+.you-fade-enter-active,
+.you-fade-leave-active {
+	transition-property: opacity;
+}
+.you-fade-enter,
+.you-fade-leave-to {
+	opacity: 0;
+}
+.you-fade-down-enter-active,
+.you-fade-down-leave-active,
+.you-fade-left-enter-active,
+.you-fade-left-leave-active,
+.you-fade-right-enter-active,
+.you-fade-right-leave-active,
+.you-fade-up-enter-active,
+.you-fade-up-leave-active {
+	transition-property: opacity, transform;
+}
+.you-fade-up-enter,
+.you-fade-up-leave-to {
+	transform: translate3d(0, 100%, 0);
+	opacity: 0;
+}
+.you-fade-down-enter,
+.you-fade-down-leave-to {
+	transform: translate3d(0, -100%, 0);
+	opacity: 0;
+}
+.you-fade-left-enter,
+.you-fade-left-leave-to {
+	transform: translate3d(-100%, 0, 0);
+	opacity: 0;
+}
+.you-fade-right-enter,
+.you-fade-right-leave-to {
+	transform: translate3d(100%, 0, 0);
+	opacity: 0;
+}
+.you-slide-down-enter-active,
+.you-slide-down-leave-active,
+.you-slide-left-enter-active,
+.you-slide-left-leave-active,
+.you-slide-right-enter-active,
+.you-slide-right-leave-active,
+.you-slide-up-enter-active,
+.you-slide-up-leave-active {
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+}
+.you-slide-up-enter,
+.you-slide-up-leave-to {
+	transform: translate3d(0, 100%, 0);
+}
+.you-slide-down-enter,
+.you-slide-down-leave-to {
+	transform: translate3d(0, -100%, 0);
+}
+.you-slide-left-enter,
+.you-slide-left-leave-to {
+	transform: translate3d(-100%, 0, 0);
+}
+.you-slide-right-enter,
+.you-slide-right-leave-to {
+	transform: translate3d(100%, 0, 0);
+}

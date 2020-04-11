@@ -1,0 +1,163 @@
+@import '../common/index.scss';
+.you-popup {
+	position: fixed;
+	box-sizing: border-box;
+	max-height: 100%;
+	overflow-y: auto;
+	transition-timing-function: ease;
+	-webkit-animation: ease both;
+	animation: ease both;
+	-webkit-overflow-scrolling: touch;
+	background-color: #fff;
+	background-color: var(--popup-background-color, #fff);
+}
+.you-popup--center {
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+}
+.you-popup--center.you-popup--round {
+	border-radius: 20px;
+	border-radius: var(--popup-round-border-radius, 20px);
+}
+.you-popup--top {
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.you-popup--top.you-popup--round {
+	border-radius: 0 0 20px 20px;
+	border-radius: 0 0 var(--popup-round-border-radius, 20px) var(--popup-round-border-radius, 20px);
+}
+.you-popup--right {
+	top: 50%;
+	right: 0;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+}
+.you-popup--right.you-popup--round {
+	border-radius: 20px 0 0 20px;
+	border-radius: var(--popup-round-border-radius, 20px) 0 0 var(--popup-round-border-radius, 20px);
+}
+.you-popup--bottom {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.you-popup--bottom.you-popup--round {
+	border-radius: 20px 20px 0 0;
+	border-radius: var(--popup-round-border-radius, 20px) var(--popup-round-border-radius, 20px) 0 0;
+}
+.you-popup--left {
+	top: 50%;
+	left: 0;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+}
+.you-popup--left.you-popup--round {
+	border-radius: 0 20px 20px 0;
+	border-radius: 0 var(--popup-round-border-radius, 20px) var(--popup-round-border-radius, 20px) 0;
+}
+.you-popup--bottom.you-popup--safe {
+	padding-bottom: env(safe-area-inset-bottom);
+}
+.you-popup--safeTop {
+	padding-top: env(safe-area-inset-top);
+}
+.you-popup__close-icon {
+	position: absolute;
+	z-index: 1;
+	z-index: var(--popup-close-icon-z-index, 1);
+	color: #969799;
+	color: var(--popup-close-icon-color, #969799);
+	font-size: 18px;
+	font-size: var(--popup-close-icon-size, 18px);
+}
+.you-popup__close-icon--top-left {
+	top: 16px;
+	top: var(--popup-close-icon-margin, 16px);
+	left: 16px;
+	left: var(--popup-close-icon-margin, 16px);
+}
+.you-popup__close-icon--top-right {
+	top: 16px;
+	top: var(--popup-close-icon-margin, 16px);
+	right: 16px;
+	right: var(--popup-close-icon-margin, 16px);
+}
+.you-popup__close-icon--bottom-left {
+	bottom: 16px;
+	bottom: var(--popup-close-icon-margin, 16px);
+	left: 16px;
+	left: var(--popup-close-icon-margin, 16px);
+}
+.you-popup__close-icon--bottom-right {
+	right: 16px;
+	right: var(--popup-close-icon-margin, 16px);
+	bottom: 16px;
+	bottom: var(--popup-close-icon-margin, 16px);
+}
+.you-popup__close-icon:active {
+	opacity: 0.6;
+}
+.you-scale-enter-active,
+.you-scale-leave-active {
+	transition-property: opacity, -webkit-transform;
+	transition-property: opacity, transform;
+	transition-property: opacity, transform, -webkit-transform;
+}
+.you-scale-enter,
+.you-scale-leave-to {
+	-webkit-transform: translate3d(-50%, -50%, 0) scale(0.7);
+	transform: translate3d(-50%, -50%, 0) scale(0.7);
+	opacity: 0;
+}
+.you-fade-enter-active,
+.you-fade-leave-active {
+	transition-property: opacity;
+}
+.you-fade-enter,
+.you-fade-leave-to {
+	opacity: 0;
+}
+.you-center-enter-active,
+.you-center-leave-active {
+	transition-property: opacity;
+}
+.you-center-enter,
+.you-center-leave-to {
+	opacity: 0;
+}
+.you-bottom-enter-active,
+.you-bottom-leave-active,
+.you-left-enter-active,
+.you-left-leave-active,
+.you-right-enter-active,
+.you-right-leave-active,
+.you-top-enter-active,
+.you-top-leave-active {
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+}
+.you-bottom-enter,
+.you-bottom-leave-to {
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100%, 0);
+}
+.you-top-enter,
+.you-top-leave-to {
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+}
+.you-left-enter,
+.you-left-leave-to {
+	-webkit-transform: translate3d(-100%, -50%, 0);
+	transform: translate3d(-100%, -50%, 0);
+}
+.you-right-enter,
+.you-right-leave-to {
+	-webkit-transform: translate3d(100%, -50%, 0);
+	transform: translate3d(100%, -50%, 0);
+}

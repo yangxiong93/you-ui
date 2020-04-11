@@ -1,0 +1,246 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.you-ellipsis.data-v-85d51266 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.you-multi-ellipsis--l2.data-v-85d51266 {
+  -webkit-line-clamp: 2;
+}
+.you-multi-ellipsis--l2.data-v-85d51266,
+.you-multi-ellipsis--l3.data-v-85d51266 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+.you-multi-ellipsis--l3.data-v-85d51266 {
+  -webkit-line-clamp: 3;
+}
+.you-clearfix.data-v-85d51266:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.you-hairline.data-v-85d51266,
+.you-hairline--bottom.data-v-85d51266,
+.you-hairline--left.data-v-85d51266,
+.you-hairline--right.data-v-85d51266,
+.you-hairline--surround.data-v-85d51266,
+.you-hairline--top.data-v-85d51266,
+.you-hairline--top-bottom.data-v-85d51266 {
+  position: relative;
+}
+.you-hairline--bottom.data-v-85d51266:after,
+.you-hairline--left.data-v-85d51266:after,
+.you-hairline--right.data-v-85d51266:after,
+.you-hairline--surround.data-v-85d51266:after,
+.you-hairline--top-bottom.data-v-85d51266:after,
+.you-hairline--top.data-v-85d51266:after,
+.you-hairline.data-v-85d51266:after {
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  content: ' ';
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0 solid #eee;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+.you-hairline--top.data-v-85d51266:after {
+  border-top-width: 1px;
+}
+.you-hairline--left.data-v-85d51266:after {
+  border-left-width: 1px;
+}
+.you-hairline--right.data-v-85d51266:after {
+  border-right-width: 1px;
+}
+.you-hairline--bottom.data-v-85d51266:after {
+  border-bottom-width: 1px;
+}
+.you-hairline--top-bottom.data-v-85d51266:after {
+  border-width: 1px 0;
+}
+.you-hairline--surround.data-v-85d51266:after {
+  border-width: 1px;
+}
+.you-col.data-v-85d51266 {
+  float: left;
+  box-sizing: border-box;
+}
+.you-col--1.data-v-85d51266 {
+  width: 4.16666667%;
+}
+.you-col--offset-1.data-v-85d51266 {
+  margin-left: 4.16666667%;
+}
+.you-col--2.data-v-85d51266 {
+  width: 8.33333333%;
+}
+.you-col--offset-2.data-v-85d51266 {
+  margin-left: 8.33333333%;
+}
+.you-col--3.data-v-85d51266 {
+  width: 12.5%;
+}
+.you-col--offset-3.data-v-85d51266 {
+  margin-left: 12.5%;
+}
+.you-col--4.data-v-85d51266 {
+  width: 16.66666667%;
+}
+.you-col--offset-4.data-v-85d51266 {
+  margin-left: 16.66666667%;
+}
+.you-col--5.data-v-85d51266 {
+  width: 20.83333333%;
+}
+.you-col--offset-5.data-v-85d51266 {
+  margin-left: 20.83333333%;
+}
+.you-col--6.data-v-85d51266 {
+  width: 25%;
+}
+.you-col--offset-6.data-v-85d51266 {
+  margin-left: 25%;
+}
+.you-col--7.data-v-85d51266 {
+  width: 29.16666667%;
+}
+.you-col--offset-7.data-v-85d51266 {
+  margin-left: 29.16666667%;
+}
+.you-col--8.data-v-85d51266 {
+  width: 33.33333333%;
+}
+.you-col--offset-8.data-v-85d51266 {
+  margin-left: 33.33333333%;
+}
+.you-col--9.data-v-85d51266 {
+  width: 37.5%;
+}
+.you-col--offset-9.data-v-85d51266 {
+  margin-left: 37.5%;
+}
+.you-col--10.data-v-85d51266 {
+  width: 41.66666667%;
+}
+.you-col--offset-10.data-v-85d51266 {
+  margin-left: 41.66666667%;
+}
+.you-col--11.data-v-85d51266 {
+  width: 45.83333333%;
+}
+.you-col--offset-11.data-v-85d51266 {
+  margin-left: 45.83333333%;
+}
+.you-col--12.data-v-85d51266 {
+  width: 50%;
+}
+.you-col--offset-12.data-v-85d51266 {
+  margin-left: 50%;
+}
+.you-col--13.data-v-85d51266 {
+  width: 54.16666667%;
+}
+.you-col--offset-13.data-v-85d51266 {
+  margin-left: 54.16666667%;
+}
+.you-col--14.data-v-85d51266 {
+  width: 58.33333333%;
+}
+.you-col--offset-14.data-v-85d51266 {
+  margin-left: 58.33333333%;
+}
+.you-col--15.data-v-85d51266 {
+  width: 62.5%;
+}
+.you-col--offset-15.data-v-85d51266 {
+  margin-left: 62.5%;
+}
+.you-col--16.data-v-85d51266 {
+  width: 66.66666667%;
+}
+.you-col--offset-16.data-v-85d51266 {
+  margin-left: 66.66666667%;
+}
+.you-col--17.data-v-85d51266 {
+  width: 70.83333333%;
+}
+.you-col--offset-17.data-v-85d51266 {
+  margin-left: 70.83333333%;
+}
+.you-col--18.data-v-85d51266 {
+  width: 75%;
+}
+.you-col--offset-18.data-v-85d51266 {
+  margin-left: 75%;
+}
+.you-col--19.data-v-85d51266 {
+  width: 79.16666667%;
+}
+.you-col--offset-19.data-v-85d51266 {
+  margin-left: 79.16666667%;
+}
+.you-col--20.data-v-85d51266 {
+  width: 83.33333333%;
+}
+.you-col--offset-20.data-v-85d51266 {
+  margin-left: 83.33333333%;
+}
+.you-col--21.data-v-85d51266 {
+  width: 87.5%;
+}
+.you-col--offset-21.data-v-85d51266 {
+  margin-left: 87.5%;
+}
+.you-col--22.data-v-85d51266 {
+  width: 91.66666667%;
+}
+.you-col--offset-22.data-v-85d51266 {
+  margin-left: 91.66666667%;
+}
+.you-col--23.data-v-85d51266 {
+  width: 95.83333333%;
+}
+.you-col--offset-23.data-v-85d51266 {
+  margin-left: 95.83333333%;
+}
+.you-col--24.data-v-85d51266 {
+  width: 100%;
+}
+.you-col--offset-24.data-v-85d51266 {
+  margin-left: 100%;
+}
+

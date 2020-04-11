@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "you-row": "/components/row/index",
+    "you-col": "/components/col/index"
+  }
+}

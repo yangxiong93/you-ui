@@ -1,0 +1,12 @@
+function isObj(x) {
+  var type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
+function getOptionText(option, valueKey) {
+  return isObj(option) && option[valueKey] != null ? option[valueKey] : option;
+}
+
+module.exports = {
+	getOptionText: getOptionText
+}
