@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-popup {
 	position: fixed;
 	box-sizing: border-box;

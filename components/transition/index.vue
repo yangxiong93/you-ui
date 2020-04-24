@@ -18,9 +18,9 @@
 </script>
 
 
-<style lang="scss" scoped>
-@import '../common/index.scss';
-@import './index.scss';
+<style>
+@import '../common/index.css';
+@import './index.css';
 .you-overlay {
 	position: fixed;
 	top: 0;

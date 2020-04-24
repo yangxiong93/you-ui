@@ -6,7 +6,7 @@ export const basic = function() {
 			// },
 			set(data, callback) {
 				this.setData(data, callback);
-				return new Promise(resolve => setTimeout(()=>{resolve}),500);
+				return new Promise(resolve => this.$nextTick(resolve));
 			},
 			setData(obj){
 				let that = this;
@@ -26,6 +26,20 @@ export const basic = function() {
 						}
 						data = data[key2];
 					})
+				});
+			},
+			getRect(selector, all) {
+				return new Promise(resolve => {
+					uni.createSelectorQuery()
+						.in(this)[all ? 'selectAll' : 'select'](selector)
+						.boundingClientRect(rect => {
+						if (all && Array.isArray(rect) && rect.length) {
+							resolve(rect);
+						}
+						if (!all && rect) {
+							resolve(rect);
+						}
+					}).exec();
 				});
 			}
 		}

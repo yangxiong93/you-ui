@@ -8,15 +8,14 @@
 	  >
 	    <slot />
 	  </view>
-	  <view class="you-radio__icon-wrap" :style="'font-size:' + cIconSize" @tap="onChange">
+	  <view class="you-radio__icon-wrap" :style="'font-size:' + cIconSize + 'px'" @tap="onChange">
 	    <slot v-if="useIconSlot" name="icon" />
 	    <you-icon
 	      v-else
 	      name="success"
 	      :class="[radio__icon]"
-	      :style="'font-size:' + cIconSize + ';' + checkedColor && !Cdisabled && values === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor + ';' : ''"
+	      :custom-style="'line-height:' + cIconSize +'px;font-size:' + cIconSize + 'px;' + checkedColor && !Cdisabled && values === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor + ';' : ''"
 	      custom-class="icon-class"
-	      :custom-style="'line-height:' + cIconSize + ';font-size: .8em;display: block;'"
 	    />
 	  </view>
 	  <view
@@ -67,7 +66,7 @@
 				Cdisabled: this.disabled
 			}
 		},
-		inject: ['parent'],
+		inject: ['radio_parent'],
 		computed: {
 			radio__label:function(){
 				let labelPosition = this.labelPosition;
@@ -88,7 +87,7 @@
 		},
 		methods: {
 			emitChange(value) {
-				const instance = this.parent || this;
+				const instance = this.radio_parent || this;
 				instance.$emit('input', value);
 				instance.$emit('change', value);
 			},
@@ -107,6 +106,6 @@
 	}
 </script>
 
-<style lang="scss" scoped>
-	@import './index.scss';
+<style>
+	@import './index.css';
 </style>

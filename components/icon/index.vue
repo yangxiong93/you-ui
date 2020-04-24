@@ -2,8 +2,8 @@
 	<view
 		:class="[customClass,classPrefix, isImageName ? 'you-icon--image' : classPrefix + '-' + name]"
 		:style="'color:' + color + ';font-size:' + compSize + ';' + customStyle"
-		@tap.stop="onClick"
-		@touchstart.stop="onTouchstart"
+		@tap="onClick"
+		@touchstart="onTouchstart"
 	>
 		<you-info v-if="info !== null || dot" :dot="dot" :info="info" custom-class="you-icon__info" />
 		<image v-if="isImageName" :src="name" mode="aspectFit" class="you-icon__image" />
@@ -80,6 +80,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import './index.scss';
+<style>
+@import './index.css';
 </style>

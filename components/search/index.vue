@@ -133,8 +133,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../common/index.scss';
+<style>
+@import '../common/index.css';
 .you-search {
 	-webkit-align-items: center;
 	align-items: center;

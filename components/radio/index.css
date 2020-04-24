@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-radio {
 	display: -webkit-flex;
 	display: flex;

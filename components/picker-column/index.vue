@@ -158,8 +158,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import '../common/index.scss';
+<style>
+@import '../common/index.css';
 .you-picker-column {
 	overflow: hidden;
 	text-align: center;

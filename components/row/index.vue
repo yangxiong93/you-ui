@@ -47,7 +47,7 @@
 	}
 </script>
 
-<style lang="scss">
-	@import '../common/index.scss';
+<style>
+	@import '../common/index.css';
 	.you-row:after{display:table;clear:both;content:""}
 </style>

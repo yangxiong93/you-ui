@@ -117,7 +117,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import './index.scss';
-@import '../transition/index.scss';
+<style>
+@import './index.css';
+@import '../transition/index.css';
 </style>

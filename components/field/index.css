@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-field__body {
 	display: -webkit-flex;
 	display: flex;

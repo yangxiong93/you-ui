@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-checkbox {
 	display: -webkit-flex;
 	display: flex;

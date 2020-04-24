@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-cell {
 	position: relative;
 	display: -webkit-flex;

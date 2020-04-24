@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-cell-group__title {
 	padding: 16px 16px 8px;
 	padding: var(--cell-group-title-padding, 16px 16px 8px);

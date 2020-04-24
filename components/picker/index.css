@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 .you-picker {
 	position: relative;
 	overflow: hidden;

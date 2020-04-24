@@ -13,7 +13,7 @@
 		},
 		provide(){
 			return {
-				parent: this,
+				radio_parent: this,
 			}
 		},
 		watch:{
@@ -58,6 +58,6 @@
 	}
 </script>
 
-<style lang="scss" scoped>
-	@import '../common/index.scss';
+<style>
+	@import '../common/index.css';
 </style>

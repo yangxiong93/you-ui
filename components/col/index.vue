@@ -40,6 +40,6 @@
 	}
 </script>
 
-<style lang="scss" scoped>
-	@import './index.scss';
+<style>
+	@import './index.css';
 </style>

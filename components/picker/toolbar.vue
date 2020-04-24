@@ -57,6 +57,6 @@
 	}
 </script>
 
-<style lang="scss">
-	@import './index.scss'
+<style>
+	@import './index.css';
 </style>

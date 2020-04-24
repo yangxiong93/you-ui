@@ -1,4 +1,4 @@
-@import '../common/index.scss';
+@import '../common/index.css';
 @font-face {
 	font-weight: 400;
 	font-family: you-icon;
@@ -17,6 +17,11 @@
 .you-icon,
 .you-icon:before {
 	display: inline-block;
+	/* #ifndef MP */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* #endif */
 }
 .you-icon-add-o:before {
 	content: '\F000';
@@ -51,6 +56,9 @@
 .you-icon-arrow:before {
 	content: '\F00A';
 }
+// .you-icon-arrow-right:before {
+// 	content: '\F00A';
+// }
 .you-icon-ascending:before {
 	content: '\F00B';
 }
@@ -720,4 +728,7 @@
 }
 .you-icon__info {
 	z-index: 1;
+}
+.you-collapse-item__title--expanded {
+	color:red!important;
 }

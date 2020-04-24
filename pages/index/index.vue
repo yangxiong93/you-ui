@@ -1,49 +1,137 @@
 <template>
-	<view>
-		<you-row gutter="20">
-			<you-col span="8" v-for="(item, index) in bigList" :key="index"><view style="background: #000000;color: #fff;" @tap="onBrand" :data-index="index">{{item.brandName}}</view></you-col>
-		</you-row>
+	<view class="container">
+	  <view class="title">
+		<image class="logo" src="https://img.yzcdn.cn/vant/logo.png" />
+		<view class="title-text">You Weapp</view>
+	  </view>
+	  <view class="desc">轻量、可靠的小程序 UI 组件库</view>
+	
+	  <you-collapse
+		v-for="(group,index) in list"
+		:key="index"
+		:value="activeNames"
+		:border="false"
+		@change="onChangeCollapse"
+	  >
+		<you-collapse-item
+		  clickable
+		  :is-link="false"
+		  customClass="mobile-nav"
+		  titleClass="mobile-nav__title"
+		  contentClass="mobile-nav__content"
+		  :title="group.groupName"
+		  :name="group.groupName"
+		>
+			<template v-slot:right-icon>
+				<you-icon
+				  :name="group.icon"
+				  customClass="mobile-nav__icon"
+				/>
+			</template>
+		  <you-cell
+			v-for="(item,childIndex) in group.list"
+			:key="childIndex"
+			is-link
+			:url="'/pages' + item.path + '/index'"
+			:title="item.title"
+		  />
+		</you-collapse-item>
+	  </you-collapse>
 	</view>
 </template>
 
 <script>
-import youRow from '@/components/row/index.vue';
-import youCol from '@/components/col/index.vue';
+import youCell from '@/components/cell/index.vue';
+import youIcon from '@/components/icon/index.vue';
+import youCollapse from '@/components/collapse/index.vue';
+import youCollapseItem from '@/components/collapse-item/index.vue';
+import list from '@/config';
 export default {
-	components: { youRow, youCol },
+	components: {youCell, youIcon, youCollapse, youCollapseItem},
 	data() {
 		return {
-			bigList: [{
-				brandName: '多发发呆'
-			},{
-				brandName: '会过得如何'
-			},{
-				brandName: '跟风狗还是'
-			}]
+			list: list,
+			activeNames: []
 		};
 	},
-	onLoad() {
-		// this.getList()
-	},
 	methods: {
-		onBrand(e){
-			console.log(e.currentTarget.dataset.index)
+		onChangeCollapse(event) {
+		  this.activeNames = event;
+		},
+		
+		onClick(event) {
+		  const { switchTab, url } = event.currentTarget.dataset;
+		  if (switchTab) {
+		    wx.switchTab({ url });
+		  }
 		}
 	}
 };
 </script>
 
 <style>
-.wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
+page {
+  padding-bottom: 0;
 }
 
-.block {
-	width: 120px;
-	height: 120px;
-	background-color: #fff;
+.container {
+  padding: 45px 20px 20px;
+}
+
+.title {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.logo,
+.title-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title-text {
+  font-size: 32px;
+  font-weight: 500;
+  margin-left: 15px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #7d7e80;
+  margin: 0 0 45px;
+  padding-left: 15px;
+}
+
+.mobile-nav {
+  margin-bottom: 16px;
+}
+
+.mobile-nav__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 40px;
+  align-items: center;
+  border-radius: 2px;
+  color: #333333!important;
+}
+
+.mobile-nav__content {
+  padding: 0 !important;
+}
+
+.mobile-nav__icon {
+  font-size: 24px !important;
+  /* #ifdef MP */
+    margin-top: 8px;
+  /* #endif */
+}
+
+.mobile-nav__icon image {
+  width: 100%;
 }
 </style>
