@@ -1,5 +1,5 @@
 <template>
-	<view class="you-collapse-item" :class="[customClass, index !== 0 ? 'van-hairline--top' : '']">
+	<view class="you-collapse-item" :class="[customClass, index !== 0 ? 'you-hairline--top' : '']">
 		<you-cell
 			:title="title"
 			:title-class="titleClass"

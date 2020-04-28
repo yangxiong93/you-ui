@@ -7,7 +7,7 @@ function tabClass(active, ellipsis) {
   }
 
   if (ellipsis) {
-    classes.push('van-ellipsis');
+    classes.push('you-ellipsis');
   }
 
   return classes.join(' ');

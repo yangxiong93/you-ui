@@ -1,8 +1,8 @@
 <template>
 	<view
 	  v-if="info !== null && info !== '' || dot"
-	  class="custom-class you-info"
-	  :class="info"
+	  class="you-info"
+	  :class="[customClass,info]"
 	  :style="customStyle"
 	>{{ dot ? '' : info }}</view>
 </template>
@@ -12,6 +12,7 @@ import utils from '../wxs/utils.js';
 export default {
 	name: 'youInfo',
 	props: {
+		customClass: String,
 		customStyle: {
 			type: String,
 			default: ''
@@ -19,14 +20,8 @@ export default {
 		dot: {
 			type: Boolean,
 			default: false
-		}
-	},
-	computed: {
-		info: function() {
-			let dot = this.dot;
-			let info = utils.bem('info', { dot });
-			return info
-		}
+		},
+		info: [String,Number]
 	}
 }
 </script>

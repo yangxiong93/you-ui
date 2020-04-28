@@ -1,12 +1,12 @@
 <template>
-	<view :class="[customClass, tag, plain ? 'van-hairline--surround' : '']"
+	<view :class="[customClass, tag, plain ? 'you-hairline--surround' : '']"
 	  :style="color && !plain ? 'background-color: ' + color + ';' : '' + textColor || (color && plain) ? 'color: ' + (textColor || color) : ''"
 	>
 	  <slot />
 	  <you-icon
 	    v-if="closeable"
 	    name="cross"
-	    custom-class="van-tag__close"
+	    custom-class="you-tag__close"
 	    @click="onClose"
 	  />
 	</view>

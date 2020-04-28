@@ -1,6 +1,6 @@
 <template>
 	<you-picker
-		class="van-area__picker"
+		class="you-area__picker"
 		active-class="active-class"
 		toolbar-class="toolbar-class"
 		column-class="column-class"
@@ -86,7 +86,7 @@ export default {
 	methods: {
 		getPicker() {
 			if (this.picker == null) {
-				this.picker = this.selectComponent('.van-area__picker');
+				this.picker = this.selectComponent('.you-area__picker');
 			}
 			return this.picker;
 		},

@@ -6,10 +6,18 @@
 import utils from '../wxs/utils.js';
 import { basic } from '../mixins/basic.js';
 
+function shiftArr(arr){
+		let newArr = arr.filter((item,index)=>{
+			return index !== 0;
+		})
+		return newArr;
+	}
+	
 export default {
 	props: {
+		customClass: String,
 		dot: Boolean,
-		info: null,
+		info: [String,Number],
 		title: String,
 		disabled: Boolean,
 		titleStyle: String,
@@ -18,16 +26,34 @@ export default {
 			default: ''
 		}
 	},
+	inject: ['tabs_parent'],
 	data() {
 		return {
-			active: false
-		};
+			active: false,
+			shouldShow: true,
+			shouldRender: true
+		}
 	},
 	mixins: [basic()],
 	computed: {
 		tab__pane: function() {
 			let { active } = this;
 			return utils.bem('tab__pane', { active, inactive: !active });
+		},
+		index: function() {
+			let children,index;
+			// #ifdef MP
+			children = shiftArr(this.tabs_parent.$children);
+			index = children.findIndex(item => {
+				return item.title === this.title;
+			})
+			// #endif
+			// #ifndef MP
+			index = this.tabs_parent.tabs.findIndex(item => {
+				return item.title === this.title;
+			})
+			// #endif
+			return index;
 		}
 	},
 	watch: {
@@ -52,10 +78,11 @@ export default {
 			if (this.name !== '') {
 				return this.name;
 			}
+			console.log(this.index)
 			return this.index;
 		},
 		updateRender(active, parent) {
-			const { data: parentData } = parent;
+			const parentData = parent;
 			this.inited = this.inited || active;
 			this.setData({
 				active,
@@ -64,8 +91,8 @@ export default {
 			});
 		},
 		update() {
-			if (this.$parent) {
-				this.$parent.updateTabs();
+			if (this.tabs_parent) {
+				this.tabs_parent.updateTabs();
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 <template>
 	<view
 	  class="custom-class"
-	  :class="[col,offset ? 'van-col--offset-' + offset : '']"
+	  :class="[col,offset ? 'you-col--offset-' + offset : '']"
 	  :style="viewStyle"
 	>
 	  <slot />
