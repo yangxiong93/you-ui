@@ -1,70 +1,75 @@
 <template>
-	<view>
-		<slot/>
-	</view>
+	<view><slot /></view>
 </template>
 
 <script>
-	export default {
-		name: 'youCheckboxGroup',
-		props: {
-			max: Number,
-			value: {
-				type: Array,
-				value: []
-			},
-			disabled: {
-				type: Boolean,
-				value: false
+export default {
+	name: 'youCheckboxGroup',
+	props: {
+		max: Number,
+		value: {
+			type: Array,
+			value: []
+		},
+		disabled: {
+			type: Boolean,
+			value: false
+		}
+	},
+	watch: {
+		value(v) {
+			this.updateChildren();
+		},
+		disabled(v) {
+			this.updateChildren();
+		}
+	},
+	mounted() {
+		this.$nextTick(() => {
+			this.updateChildren();
+		});
+	},
+	methods: {
+		updateChildren() {
+			// #ifndef H5
+			if(this.$children[0].value!==undefined){
+				(this.$children || []).forEach(child => this.finChildNode(child));
+			}else{
+				(this.$children[0].$children || []).forEach(child => this.finChildNode(child));
 			}
-		},
-		provide(){
-			return {
-				parent: this,
+			// #endif
+			// #ifdef H5
+			if(this.$children[0].$children[0].value!==undefined){
+				(this.$children[0].$children || []).forEach(child => this.finChildNode(child));
+			}else{
+				(this.$children[0].$children[0].$children[0].$children[0].$children || []).forEach(child => this.finChildNode(child));
 			}
+			// #endif
 		},
-		watch:{
-			value(v,o){
-				if(v && v!==o){
-					this.updateChildren()
-				}
-			},
-			disabled(v,o){
-				if(v && v!==o){
-					this.updateChildren()
-				}
-			},
+		updateChild(child) {
+			const { value, disabled } = this;
+			child.setData({
+				values: value.indexOf(child.name) !== -1,
+				parentDisabled: disabled
+			});
 		},
-		mounted() {
-			this.$nextTick(()=>{
-				this.updateChildren()
-			})
-		},
-		methods: {
-			updateChildren() {
-				(this.$children || []).forEach((child) => this.finChildNode(child));
-			},
-			updateChild(child) {
-				const { value, disabled } = this;
-				child.setData({
-					values: value.indexOf(child.name) !== -1,
-					parentDisabled: disabled
-				})
-			},
-			finChildNode(children){
-				const { value, disabled } = this;
-				if(children.$options.name === 'youCheckbox'){
-					this.updateChild(children)
-				}else if(children.$options.name === 'youCellGroup'){
-					(children.$children || []).forEach((child) => {
-						this.updateChild(child.$children[0])
-					});
-				}
+		finChildNode(children) {
+			const { value, disabled } = this;
+			if (children.name) {
+				this.updateChild(children);
+			} else{
+				// #ifndef H5
+				this.updateChild(children.$children[0]);
+				// #endif
+				// #ifdef H5
+				this.updateChild(children.$children[0].$children[2]);
+				// #endif
 			}
 		}
 	}
+};
 </script>
 
 <style>
-	@import '../common/index.css';
+@import '../common/index.css';
 </style>

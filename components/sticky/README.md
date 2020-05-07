@@ -12,4 +12,4 @@
 ```
 
 ## 注意
-一个页面最好不要使用多个you-sticky组件。微信小程序端测试无bug，但是h5和app端会出现bug。原因：uni.createIntersectionObserver([this], [options])传入this在h5端和app端无效且报错（希望官方早日修复）。
+一个页面最好不要使用多个you-sticky组件， 多个同时出现时微信小程序端测试无bug，但是h5和app端会出现bug。原因：uni.createIntersectionObserver([this], [options])传入this在h5端和app端无效且报错（希望官方早日修复）。

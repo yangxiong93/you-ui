@@ -1,171 +1,179 @@
 <template>
-	<van-tabs
-	  active="{{ active }}"
+	<you-tabs
+	  :active="active"
 	  color="#1989fa"
-	  bind:change="onSwitch"
+	  :change="onSwitch"
 	>
-	  <van-tab title="基础图标" custom-class="demo-tab-pane">
-	    <van-col
-	      wx:for="{{ icons.basic }}"
-	      wx:key="index"
+	  <you-tab title="基础图标" custom-class="demo-tab-pane">
+	    <you-col
+	      v-for="(item,index) in icons.basic"
+	      :key="index"
 	      custom-class="col"
 	      span="6"
 	    >
-	      <van-icon
-	        name="{{ item }}"
+	      <you-icon
+	        :name="item"
 	        size="32px"
 	        custom-class="icon"
 	      />
 	      <view class="text">{{ item }}</view>
-	    </van-col>
-	  </van-tab>
-	  <van-tab title="线框风格" custom-class="demo-tab-pane">
-	    <van-col
-	      wx:for="{{ icons.outline }}"
-	      wx:key="index"
+	    </you-col>
+	  </you-tab>
+	  <you-tab title="线框风格" custom-class="demo-tab-pane">
+	    <you-col
+	      v-for="(item,index) in icons.outline"
+	      :key="index"
 	      custom-class="col"
 	      span="6"
 	    >
-	      <van-icon
-	        name="{{ item }}"
+	      <you-icon
+	        :name="item"
 	        size="32px"
 	        custom-class="icon"
 	      />
 	      <view class="text">{{ item }}</view>
-	    </van-col>
-	  </van-tab>
-	  <van-tab title="实底风格" custom-class="demo-tab-pane">
-	    <van-col
-	      wx:for="{{ icons.filled }}"
-	      wx:key="index"
+	    </you-col>
+	  </you-tab>
+	  <you-tab title="实底风格" custom-class="demo-tab-pane">
+	    <you-col
+	      v-for="(item,index) in icons.filled"
+	      :key="index"
 	      custom-class="col"
 	      span="6"
 	    >
-	      <van-icon
-	        name="{{ item }}"
+	      <you-icon
+	        :name="item"
 	        size="32px"
 	        custom-class="icon"
 	      />
 	      <view class="text">{{ item }}</view>
-	    </van-col>
-	  </van-tab>
-	  <van-tab title="用法示例" custom-class="demo-tab-pane">
+	    </you-col>
+	  </you-tab>
+	  <you-tab title="用法示例" custom-class="demo-tab-pane">
 	    <demo-block title="图标右上角小红点">
-	      <van-col
+	      <you-col
 	        custom-class="col"
 	        span="6"
 	      >
-	        <van-icon
-	          name="{{ demoIcon }}"
+	        <you-icon
+	          :name="demoIcon"
 	          size="32px"
 	          custom-class="icon"
 	        />
 	        <view class="text">{{ demoIcon }}</view>
-	      </van-col>
-	       <van-col
+	      </you-col>
+	       <you-col
 	        custom-class="col"
 	        span="6"
 	      >
-	        <van-icon
-	          name="{{ demoIcon }}"
+	        <you-icon
+	          :name="demoIcon"
 	          size="32px"
 	          custom-class="icon"
 	          dot
 	        />
 	        <view class="text">{{ demoIcon }}</view>
-	      </van-col>
+	      </you-col>
 	    </demo-block>
 	    <demo-block title="图标右上角文字提示">
-	        <van-col
+	        <you-col
 	          custom-class="col"
 	          span="6"
 	        >
-	          <van-icon
-	            name="{{ demoIcon }}"
+	          <you-icon
+	            :name="demoIcon"
 	            size="32px"
 	            custom-class="icon"
 	          />
 	          <view class="text">{{ demoIcon }}</view>
-	        </van-col>
-	        <van-col
+	        </you-col>
+	        <you-col
 	          custom-class="col"
 	          span="6"
 	        >
-	          <van-icon
-	            name="{{ demoIcon }}"
+	          <you-icon
+	            :name="demoIcon"
 	            size="32px"
 	            custom-class="icon"
 	            info="99+"
 	          />
 	          <view class="text">{{ demoIcon }}</view>
-	        </van-col>
+	        </you-col>
 	      </demo-block>
 	      <demo-block title="图标颜色">
-	        <van-col
+	        <you-col
 	          custom-class="col"
 	          span="6"
 	        >
-	          <van-icon
-	            name="{{ demoIcon }}"
+	          <you-icon
+	            :name="demoIcon"
 	            size="32px"
 	            custom-class="icon"
 	          />
 	          <view class="text">{{ demoIcon }}</view>
-	        </van-col>
-	        <van-col
+	        </you-col>
+	        <you-col
 	          custom-class="col"
 	          span="6"
 	        >
-	          <van-icon
-	            name="{{ demoIcon }}"
+	          <you-icon
+	            :name="demoIcon"
 	            size="32px"
 	            custom-class="icon"
 	            color="red"
 	          />
 	          <view class="text">{{ demoIcon }}</view>
-	        </van-col>
+	        </you-col>
 	      </demo-block>
 	      <demo-block title="图标大小">
-	        <van-col
+	        <you-col
 	          custom-class="col"
 	          span="6"
 	        >
-	          <van-icon
-	            name="{{ demoIcon }}"
+	          <you-icon
+	            :name="demoIcon"
 	            size="32px"
 	            custom-class="icon"
 	          />
 	          <view class="text">{{ demoIcon }}</view>
-	        </van-col>
-	        <van-col
+	        </you-col>
+	        <you-col
 	          custom-class="col"
 	          span="6"
 	        >
-	          <van-icon
-	            name="{{ demoIcon }}"
+	          <you-icon
+	            :name="demoIcon"
 	            size="45px"
 	            custom-class="icon"
 	          />
 	          <view class="text">{{ demoIcon }}</view>
-	        </van-col>
+	        </you-col>
 	      </demo-block>
-	    </van-tab>
-	</van-tabs>
+	    </you-tab>
+	</you-tabs>
 	
 </template>
 
 <script>
+	import icons from './config';
+	import youIcon from '@/components/icon/index.vue';
+	import demoBlock from '@/components/demo-block/index.vue';
+	import youTabs from '@/components/tabs/index.vue';
+	import youTab from '@/components/tab/index.vue';
+	import youCol from '@/components/col/index.vue';
+	
 	export default {
-		data: {
-		  icons,
-		  active: 0,
-		  demoIcon: 'location-o'
+		components: {youIcon, demoBlock, youTabs, youTab, youCol},
+		data() {
+			return {
+				icons: icons,
+				active: 0,
+				demoIcon: 'location-o'
+			}
 		},
 		methods:{
 			onSwitch(event) {
-			  this.setData({
-			    active: event.detail.index
-			  });
+			    active = event.index
 			}
 		}
 	}

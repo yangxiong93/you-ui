@@ -2,8 +2,7 @@
 	<you-overlay v-if="overlay" :show="show" :z-index="zIndex" :custom-style="overlayStyle" :duration="duration" @click="onClickOverlay">
 		<view
 			v-if="inited"
-			class="custom-class"
-			:class="[classes, popup]"
+			:class="[customClass,classes, popup]"
 			:style="'z-index:' + zIndex + ';transition-duration:' + currentDuration + 'ms;display:' + display + ';' + customStyle"
 			@tap.stop="onTap"
 		>
@@ -90,9 +89,9 @@ export default {
 			type: Boolean,
 			default: false
 		},
+		customClass: String
 	},
 	computed: {
-		// transition: function(){},
 		popup: function() {
 			let position = this.position;
 			let round = this.round;

@@ -1,7 +1,6 @@
 <template>
 	<view
-	  class="custom-class"
-	  :class="[col,offset ? 'you-col--offset-' + offset : '']"
+	  :class="[col,customClass,offset ? 'you-col--offset-' + offset : '']"
 	  :style="viewStyle"
 	>
 	  <slot />
@@ -19,8 +18,9 @@
 		},
 		mixins:[basic()],
 		props:{
-			span: Number,
-			offset: Number
+			customClass:String,
+			span: [Number,String],
+			offset: [Number,String]
 		},
 		computed:{
 			col:function(){

@@ -1,5 +1,5 @@
 <template>
-	<view class="you-checkbox custom-class">
+	<view :class="['you-checkbox', customClass]">
 	  <view class="you-checkbox__icon-wrap" @tap.stop="toggle">
 	    <slot v-if="useIconSlot" name="icon" />
 	    <you-icon
@@ -35,6 +35,7 @@
 		},
 		mixins: [basic()],
 		props: {
+			customClass: String,
 			value: {
 				type: Boolean,
 				default: false
@@ -54,11 +55,15 @@
 				default: 20
 			}
 		},
-		inject: ['parent'],
 		data(){
 			return {
 				parentDisabled: false,
-				values: this.value, // 避免子组件直接修改props数据引起警告
+				values: this.value, 
+			}
+		},
+		watch: {
+			value(v){
+				this.values = v; // 避免子组件直接修改props数据引起警告
 			}
 		},
 		computed: {
@@ -87,8 +92,18 @@
 				}
 			},
 			emitChange(value) {
-				if (this.parent) {
-					this.setParentValue(this.parent, value);
+				// #ifndef H5
+				if (this.$parent.$options.name === "youCheckboxGroup") {
+					this.setParentValue(this.$parent, value);
+				}else if(this.$parent.$parent.$parent && this.$parent.$parent.$parent.$options.name === "youCheckboxGroup"){
+					this.setParentValue(this.$parent.$parent.$parent, value);
+				// #endif
+				// #ifdef H5
+				if (this.$parent.$parent.value) {
+					this.setParentValue(this.$parent.$parent, value);
+				}else if(this.$parent.$parent.$parent.$parent.$parent.$parent.$parent.value){
+					this.setParentValue(this.$parent.$parent.$parent.$parent.$parent.$parent.$parent, value);
+				// #endif
 				}else {
 					emit(this, value);
 				}
@@ -99,7 +114,6 @@
 					this.emitChange(!values);
 				}
 			},
-			
 			setParentValue(parent, value) {
 				const parentValue = parent.value.slice();
 				const { name } = this;

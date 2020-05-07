@@ -1,5 +1,5 @@
 <template>
-	<you-transition :show="show" custom-class="you-overlay" :custom-style="'z-index:' + zIndex + ';' + customStyle" :duration="duration" @tap="onClick" catch:touchmove="noop">
+	<you-transition :show="show" custom-class="you-overlay" :custom-style="'z-index:' + zIndex + ';' + customStyle" :duration="duration" @click="onClick" catch:touchmove="noop">
 		<slot></slot>
 	</you-transition>
 </template>

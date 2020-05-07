@@ -12,10 +12,10 @@
 
 <script>
 import utils from '../wxs/utils.js';
-import youInfo from '../info/index.vue';
+import youInfo from '@/components/info/index.vue';
 export default {
 	name: 'youIcon',
-	comments: {
+	components: {
 		youInfo
 	},
 	props: {

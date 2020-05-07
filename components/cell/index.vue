@@ -174,7 +174,7 @@ export default {
 						break;
 				}
 			}
-			this.$emit('click',this.dataIndex || this.dataName); 
+			this.$emit('click',this.dataIndex!==undefined?this.dataIndex:this.dataName); 
 		},
 		onSwitchChange(e) {
 			this.$emit('switchChange', e.detail);

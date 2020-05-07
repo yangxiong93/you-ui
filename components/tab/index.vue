@@ -6,18 +6,18 @@
 import utils from '../wxs/utils.js';
 import { basic } from '../mixins/basic.js';
 
-function shiftArr(arr){
-		let newArr = arr.filter((item,index)=>{
-			return index !== 0;
-		})
-		return newArr;
-	}
-	
+function shiftArr(arr) {
+	let newArr = arr.filter((item, index) => {
+		return item.title !== undefined;
+	});
+	return newArr;
+}
+
 export default {
 	props: {
 		customClass: String,
 		dot: Boolean,
-		info: [String,Number],
+		info: [String, Number],
 		title: String,
 		disabled: Boolean,
 		titleStyle: String,
@@ -32,7 +32,7 @@ export default {
 			active: false,
 			shouldShow: true,
 			shouldRender: true
-		}
+		};
 	},
 	mixins: [basic()],
 	computed: {
@@ -41,17 +41,17 @@ export default {
 			return utils.bem('tab__pane', { active, inactive: !active });
 		},
 		index: function() {
-			let children,index;
+			let children, index;
 			// #ifdef MP
 			children = shiftArr(this.tabs_parent.$children);
 			index = children.findIndex(item => {
 				return item.title === this.title;
-			})
+			});
 			// #endif
 			// #ifndef MP
 			index = this.tabs_parent.tabs.findIndex(item => {
 				return item.title === this.title;
-			})
+			});
 			// #endif
 			return index;
 		}
@@ -78,7 +78,6 @@ export default {
 			if (this.name !== '') {
 				return this.name;
 			}
-			console.log(this.index)
 			return this.index;
 		},
 		updateRender(active, parent) {

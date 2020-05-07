@@ -2,7 +2,7 @@
 	<view
 	  v-if="info !== null && info !== '' || dot"
 	  class="you-info"
-	  :class="[customClass,info]"
+	  :class="[customClass,infoClass]"
 	  :style="customStyle"
 	>{{ dot ? '' : info }}</view>
 </template>
@@ -22,6 +22,12 @@ export default {
 			default: false
 		},
 		info: [String,Number]
+	},
+	computed: {
+		infoClass:function(){
+			let {dot} = this;
+			return utils.bem('info', { dot });
+		}
 	}
 }
 </script>

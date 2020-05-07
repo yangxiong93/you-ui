@@ -14,16 +14,11 @@
 		},
 		mixins:[basic()],
 		props:{
-			gutter: Number
+			gutter: [Number,String],
 		},
 		watch:{
-			gutter: {
-				handler (newV, oldV) {
-					if(newV && newV!==oldV){
-						this.setGutter()
-					}
-				},
-				deep: true
+			gutter(val){ 
+				this.setGutter()
 			}
 		},
 		mounted() {
@@ -39,9 +34,16 @@
 					? `margin-right: ${margin}; margin-left: ${margin};`
 					: '';
 				this.setData({ viewStyle });
+				// #ifdef MP
 				this.$children.forEach(col => {
 					col.setGutter(this.gutter);
 				});
+				// #endif
+				// #ifndef MP
+				this.$children[0].$children.forEach(col => {
+					col.setGutter(this.gutter);
+				});
+				// #endif
 			}
 		}
 	}

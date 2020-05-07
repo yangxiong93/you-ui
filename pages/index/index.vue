@@ -4,7 +4,7 @@
 		<image class="logo" src="https://img.yzcdn.cn/vant/logo.png" />
 		<view class="title-text">You Weapp</view>
 	  </view>
-	  <view class="desc">轻量、可靠的小程序 UI 组件库</view>
+	  <view class="desc">uniapp移动端 UI 组件库</view>
 	
 	  <you-collapse
 		v-for="(group,index) in list"

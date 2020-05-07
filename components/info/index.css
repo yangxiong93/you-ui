@@ -41,3 +41,10 @@
 	background-color: #ee0a24;
 	background-color: var(--info-dot-color, #ee0a24);
 }
+.you-tab__title__info {
+	position: relative !important;
+	top: -1px !important;
+	display: inline-block;
+	-webkit-transform: translateX(0) !important;
+	transform: translateX(0) !important
+}

@@ -1,9 +1,9 @@
 <template>
 	<view
 	  v-if="inited"
-	  :class="[customClass,classes]"
-	  class="you-transition"
+	  :class="[customClass,classes,'you-transition']"
 	  :style="'transition-duration:' + currentDuration + 'ms;' + 'display:' + display + ';' + customStyle"
+	  @click.stop="onClick"
 	>
 	  <slot />
 	</view>
@@ -13,7 +13,12 @@
 	import { transition } from '../mixins/transition.js';
 	export default {
 		name: 'youTransition',
-		mixins: [transition(true)]
+		mixins: [transition(true)],
+		methods: {
+			onClick(){
+				this.$emit('click');
+			}
+		}
 	}
 </script>
 

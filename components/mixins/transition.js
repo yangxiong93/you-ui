@@ -83,7 +83,7 @@ export const transition = function(showDefaultValue) {
 							this.checkStatus('enter');
 							this.$emit('enter');
 							this.inited = true;
-							this.display = true;
+							this.display = 'block';
 							this.classes = classNames.enter;
 							this.currentDuration = currentDuration;
 						})
@@ -140,7 +140,7 @@ export const transition = function(showDefaultValue) {
 						show,
 						display
 					} = this;
-					if (!show && display===true) {
+					if (!show) {
 						this.display = 'none';
 					}
 				}

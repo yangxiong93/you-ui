@@ -224,7 +224,7 @@ export default {
 			let newArr
 			// #ifdef MP || APP-PLUS
 			newArr = this.$children.filter((item, index) => {
-				return index !== 0;
+				return item.title !== undefined;
 			});
 			// #endif
 			// #ifndef MP || APP-PLUS

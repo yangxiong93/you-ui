@@ -8,7 +8,7 @@
 			</you-tabs>
 		</demo-block>
 
-		<!-- <demo-block title="通过名称匹配">
+		<demo-block title="通过名称匹配">
 			<you-tabs active="b">
 				<you-tab v-for="(item,index) in tabsWithName" :key="index" :name="item.name" :title="'标签 ' + item.index">
 					<view class="content">{{ '内容' + item.index }}</view>
@@ -70,7 +70,7 @@
 					<view class="content">{{ '内容' + item }}</view>
 				</you-tab>
 			</you-tabs>
-		</demo-block> -->
+		</demo-block>
 
 		<demo-block title="自定义标题">
 			<you-tabs active="1" :change="onChange" tab-class="special-tab" tab-active-class="special-tab-active">
@@ -117,7 +117,6 @@ export default {
 		},
 
 		onChange(event) {
-			console.log(event)
 			uni.showToast({
 				title: `切换到标签 ${event.index + 1}`,
 				icon: 'none'
