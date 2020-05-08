@@ -55,6 +55,18 @@
 			}
 		},
 		{
+			"path": "pages/datetime-picker/index",
+			"style": {
+				"navigationBarTitleText": "datetimePicker 时间选择"
+			}
+		},
+		{
+			"path": "pages/field/index",
+			"style": {
+				"navigationBarTitleText": "field 输入框"
+			}
+		},
+		{
 			"path": "pages/sticky/index",
 			"style": {
 				"h5": {
